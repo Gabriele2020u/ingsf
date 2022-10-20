@@ -1,13 +1,12 @@
 package it.unimi.di.sweng.lab03;
 
 import java.util.ArrayDeque;
-import java.util.Deque;
 
 public class ForthInterpreter implements  Interpreter{
 
     ArrayDeque<Integer> queue;
     public ForthInterpreter(){
-        queue = new ArrayDeque<Integer>();
+        queue = new ArrayDeque<>();
 
     }
     @Override
@@ -19,6 +18,7 @@ public class ForthInterpreter implements  Interpreter{
             queue.add(Integer.parseInt(st));
         }
     }
+
 
     @Override
     public String toString() {
