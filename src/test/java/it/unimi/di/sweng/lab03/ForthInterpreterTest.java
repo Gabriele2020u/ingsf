@@ -68,7 +68,7 @@ public class ForthInterpreterTest {
     }).isInstanceOf(IllegalArgumentException.class).hasMessage("Token error '2+'");
 
     assertThatThrownBy(() -> {
-      interpreter.input("1 2+");
+      interpreter.input("1 ++5");
     }).isInstanceOf(IllegalArgumentException.class).hasMessage("Token error '++5'");
 
   }

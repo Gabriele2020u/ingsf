@@ -22,7 +22,11 @@ public class ForthInterpreter implements  Interpreter{
                 j += queue.pop();
                 queue.push(j);
             } else {
-                queue.add(Integer.parseInt(st));
+                try {
+                    queue.add(Integer.parseInt(st));
+                } catch (Exception e) {
+                    throw new IllegalArgumentException("Token error '" + st + "'");
+                }
             }
         }
     }
