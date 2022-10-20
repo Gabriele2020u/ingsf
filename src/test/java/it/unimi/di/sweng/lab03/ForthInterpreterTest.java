@@ -59,6 +59,20 @@ public class ForthInterpreterTest {
     interpreter.input("1 2 + 5 +");
     assertThat(interpreter.toString()).isEqualTo("8 <- Top");
   }
+
+  @Test
+  public void testInputException() {
+
+    assertThatThrownBy(() -> {
+      interpreter.input("1 2+");
+    }).isInstanceOf(IllegalArgumentException.class).hasMessage("Token error '2+'");
+
+    assertThatThrownBy(() -> {
+      interpreter.input("1 2+");
+    }).isInstanceOf(IllegalArgumentException.class).hasMessage("Token error '++5'");
+
+  }
+
 }
 
 

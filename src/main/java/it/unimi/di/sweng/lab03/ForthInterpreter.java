@@ -21,7 +21,9 @@ public class ForthInterpreter implements  Interpreter{
                 int j = queue.pop();
                 j += queue.pop();
                 queue.push(j);
-            } else {queue.add(Integer.parseInt(st));}
+            } else {
+                queue.add(Integer.parseInt(st));
+            }
         }
     }
 
@@ -40,4 +42,5 @@ public class ForthInterpreter implements  Interpreter{
             }
             return s + "<- Top";
     }
+
 }
