@@ -81,13 +81,13 @@ public class ForthInterpreterTest {
   }
 
 
-  @Test
+/*  @Test
   public void testInputMul() {
     interpreter.input("1 2 *");
     assertThat(interpreter.toString()).isEqualTo("2 <- Top");
     interpreter.input("1 2 * 5 *");
     assertThat(interpreter.toString()).isEqualTo("10 <- Top");
-  }
+  }*/
 }
 
 

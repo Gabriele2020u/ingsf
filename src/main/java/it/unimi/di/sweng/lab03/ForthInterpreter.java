@@ -1,6 +1,7 @@
 package it.unimi.di.sweng.lab03;
 
 import java.util.ArrayDeque;
+import java.util.NoSuchElementException;
 
 public class ForthInterpreter implements  Interpreter{
 
@@ -16,21 +17,20 @@ public class ForthInterpreter implements  Interpreter{
 
         String []s = checkRegex(program);
 
-        for(String st : s) {
-            if (st.equals("+")) {
-                try {
+
+        for (String st : s) {
+            try {
+                if (st.equals("+")) {
                     int j = queue.pop();
                     j += queue.pop();
                     queue.push(j);
-                } catch (Exception e) {
-                    throw new IllegalArgumentException("Stack Underflow");
-                }
-            } else {
-                try {
+                } else {
                     queue.add(Integer.parseInt(st));
-                } catch (Exception e) {
-                    throw new IllegalArgumentException("Token error '" + st + "'");
                 }
+            } catch(NumberFormatException e){
+                throw new IllegalArgumentException("Token error '" + st + "'");
+            } catch(NoSuchElementException e){
+                throw new IllegalArgumentException("Stack Underflow");
             }
         }
     }
