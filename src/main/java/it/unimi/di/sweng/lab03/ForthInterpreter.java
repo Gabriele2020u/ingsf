@@ -18,9 +18,13 @@ public class ForthInterpreter implements  Interpreter{
 
         for(String st : s) {
             if (st.equals("+")) {
-                int j = queue.pop();
-                j += queue.pop();
-                queue.push(j);
+                try {
+                    int j = queue.pop();
+                    j += queue.pop();
+                    queue.push(j);
+                } catch (Exception e) {
+                    throw new IllegalArgumentException("Stack Underflow");
+                }
             } else {
                 try {
                     queue.add(Integer.parseInt(st));
