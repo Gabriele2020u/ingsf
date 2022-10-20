@@ -51,6 +51,14 @@ public class ForthInterpreterTest {
     assertThat(interpreter.toString()).isEqualTo("1 2 3 <- Top");
   }
 
+
+  @Test
+  public void testInputSum() {
+    interpreter.input("1 2 +");
+    assertThat(interpreter.toString()).isEqualTo("3 <- Top");
+    interpreter.input("1 2 + 5 +");
+    assertThat(interpreter.toString()).isEqualTo("8 <- Top");
+  }
 }
 
 
