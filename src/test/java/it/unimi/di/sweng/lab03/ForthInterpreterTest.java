@@ -20,7 +20,11 @@ public class ForthInterpreterTest {
   }
 
   @Test
-  public void testToBeDefined() {
-    fail("to be defined");
+  public void testStackEmpty() {
+    interpreter.input("");
+    assertThat(interpreter.toString()).isEqualTo("<- Top");
   }
+
 }
+
+
