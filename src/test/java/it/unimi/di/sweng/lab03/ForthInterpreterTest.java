@@ -87,6 +87,14 @@ public class ForthInterpreterTest {
     interpreter.input("1 2 * 5 *");
     assertThat(interpreter.toString()).isEqualTo("10 <- Top");
   }
+
+  @Test
+  public void testInputdiv() {
+    interpreter.input("1 2 -");
+    assertThat(interpreter.toString()).isEqualTo("-1 <- Top");
+    interpreter.input("1 2 /");
+    assertThat(interpreter.toString()).isEqualTo("0 <- Top");
+  }
 }
 
 
