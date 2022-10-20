@@ -17,7 +17,11 @@ public class ForthInterpreter implements  Interpreter{
         String []s = checkRegex(program);
 
         for(String st : s) {
-            queue.add(Integer.parseInt(st));
+            if (st.equals("+")) {
+                int j = queue.pop();
+                j += queue.pop();
+                queue.push(j);
+            } else {queue.add(Integer.parseInt(st));}
         }
     }
 
@@ -36,5 +40,4 @@ public class ForthInterpreter implements  Interpreter{
             }
             return s + "<- Top";
     }
-
 }
