@@ -13,10 +13,18 @@ public class ForthInterpreter implements  Interpreter{
     public void input(String program) {
         queue.clear();
         if (program.equals("")){return;}
-        String[] s = program.split(" ");
+
+        String []s = checkRegex(program);
+
         for(String st : s) {
             queue.add(Integer.parseInt(st));
         }
+    }
+
+    private String[] checkRegex(String program) {
+        String tmp = program.replaceAll("\\n", " ");
+        tmp = tmp.replaceAll(" +", " ");
+        return tmp.split(" ");
     }
 
 
