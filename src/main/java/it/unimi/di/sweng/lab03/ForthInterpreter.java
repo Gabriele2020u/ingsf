@@ -32,6 +32,16 @@ public class ForthInterpreter implements  Interpreter{
                         j *= queue.pop();
                         queue.push(j);
                         break;
+                    case "-":
+                        j = queue.pop();
+                        j -= queue.pop();
+                        queue.push(j);
+                        break;
+                    case "/":
+                        j = queue.pop();
+                        j /= queue.pop();
+                        queue.push(j);
+                        break;
                     default:
                         queue.add(Integer.parseInt(st));
                         break;
