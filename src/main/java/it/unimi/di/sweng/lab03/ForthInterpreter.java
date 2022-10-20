@@ -2,6 +2,7 @@ package it.unimi.di.sweng.lab03;
 
 public class ForthInterpreter implements  Interpreter{
 
+
     public ForthInterpreter(){
 
     }
@@ -12,7 +13,7 @@ public class ForthInterpreter implements  Interpreter{
 
     @Override
     public String toString() {
-        return  "";
+        return  "<- Top";
     }
 
 
