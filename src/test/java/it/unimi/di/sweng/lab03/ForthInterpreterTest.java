@@ -25,6 +25,12 @@ public class ForthInterpreterTest {
     assertThat(interpreter.toString()).isEqualTo("<- Top");
   }
 
+  @Test
+  public void testInput() {
+    interpreter.input("1 2");
+    assertThat(interpreter.toString()).isEqualTo("1 2<- Top");
+  }
+
 }
 
 
