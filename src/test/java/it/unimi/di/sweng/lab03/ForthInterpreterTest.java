@@ -33,6 +33,14 @@ public class ForthInterpreterTest {
     assertThat(interpreter.toString()).isEqualTo("1 2 <- Top");
   }
 
+  @Test
+  public void testInputSignum() {
+    interpreter.input("1 -2 3");
+    assertThat(interpreter.toString()).isEqualTo("1 -2 3 <- Top");
+    interpreter.input("1 +2 3");
+    assertThat(interpreter.toString()).isEqualTo("1 2 3 <- Top");
+  }
+
 }
 
 

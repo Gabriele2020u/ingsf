@@ -29,5 +29,4 @@ public class ForthInterpreter implements  Interpreter{
             return s + "<- Top";
     }
 
-
 }
