@@ -2,8 +2,8 @@
 
 ## LABORATORIO 3
 
-* TEAMMATE 1: <Cognome> <Nome> <matricola>
-* TEAMMATE 2: <Cognome> <Nome> <matricola>
+* TEAMMATE 1: Filipponi Lorenzo (941540)
+* TEAMMATE 2: Dino Gabriele (950060)
 
 Ogni coppia di studenti procede a effettuare il **fork** di questo repository.
 L'utente che ha effettuato il fork modifica questo README inserendo le opportune **informazioni sui
