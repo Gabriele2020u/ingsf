@@ -41,6 +41,16 @@ public class ForthInterpreterTest {
     assertThat(interpreter.toString()).isEqualTo("1 2 3 <- Top");
   }
 
+  @Test
+  public void testInputSplitter() {
+    interpreter.input("1 2");
+    assertThat(interpreter.toString()).isEqualTo("1 2 <- Top");
+    interpreter.input("1\n2");
+    assertThat(interpreter.toString()).isEqualTo("1 2 <- Top");
+    interpreter.input("1   2 \n3");
+    assertThat(interpreter.toString()).isEqualTo("1 2 3 <- Top");
+  }
+
 }
 
 
