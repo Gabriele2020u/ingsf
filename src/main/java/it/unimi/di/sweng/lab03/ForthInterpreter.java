@@ -19,16 +19,25 @@ public class ForthInterpreter implements  Interpreter{
 
 
         for (String st : s) {
+            int j;
             try {
-                if (st.equals("+")) {
-                    int j = queue.pop();
-                    j += queue.pop();
-                    queue.push(j);
-                } else {
-                    queue.add(Integer.parseInt(st));
+                switch (st){
+                    case "+":
+                        j = queue.pop();
+                        j += queue.pop();
+                        queue.push(j);
+                        break;
+                    case "*":
+                        j = queue.pop();
+                        j *= queue.pop();
+                        queue.push(j);
+                        break;
+                    default:
+                        queue.add(Integer.parseInt(st));
+                        break;
                 }
-            } catch(NumberFormatException e){
-                throw new IllegalArgumentException("Token error '" + st + "'");
+            }catch(NumberFormatException e){
+                    throw new IllegalArgumentException("Token error '" + st + "'");
             } catch(NoSuchElementException e){
                 throw new IllegalArgumentException("Stack Underflow");
             }
