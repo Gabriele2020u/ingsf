@@ -95,6 +95,8 @@ public class ForthInterpreterTest {
     interpreter.input("1 2 /");
     assertThat(interpreter.toString()).isEqualTo("0 <- Top");
   }
+
+
 }
 
 
