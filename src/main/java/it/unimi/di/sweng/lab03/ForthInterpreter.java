@@ -1,5 +1,6 @@
 package it.unimi.di.sweng.lab03;
 
+//prova
 import java.util.ArrayDeque;
 import java.util.NoSuchElementException;
 
@@ -30,16 +31,6 @@ public class ForthInterpreter implements  Interpreter{
                     case "*":
                         j = queue.pop();
                         j *= queue.pop();
-                        queue.push(j);
-                        break;
-                    case "-":
-                        j = queue.pop();
-                        j -= queue.pop();
-                        queue.push(j);
-                        break;
-                    case "/":
-                        j = queue.pop();
-                        j /= queue.pop();
                         queue.push(j);
                         break;
                     default:
